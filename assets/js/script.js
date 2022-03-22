@@ -44,6 +44,7 @@ var saveTasks = function () {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 };
 
+// allows editing of task text through click
 $(".list-group").on("click", "p", function () {
   // when the p is clicked it will turn into a textarea that can be edited
   var text = $(this)
@@ -171,7 +172,7 @@ $("#task-form-modal .btn-primary").click(function () {
   }
 });
 
-// remove all tasks
+// remove all tasks through "remove all" button
 $("#remove-tasks").on("click", function () {
   for (var key in tasks) {
     tasks[key].length = 0;
